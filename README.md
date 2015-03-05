@@ -1,1 +1,3 @@
 # Internal-Documentation-System
+
+An internal documentation system for small business (originally developed for CGI Group Inc). This application serves as a quick-access informal system of storing and accessing documentation on how-to tutorials of various job functions. Features include sorting documentation by timing (eg. daily tasks, monthly tasks, on request..etc) or by category (eg. maintenance tasks, audit tasks..etc). Other features include user profiles, commenting, tagging, search function, flexible document uploading and forums. Typical user experiences have resulted in significantly faster training of new employees, decreased downtime and higher productivity. 
