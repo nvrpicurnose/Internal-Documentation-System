@@ -1,0 +1,17 @@
+
+<% @page_title = "articles" %>
+
+<div class="center">
+  <h2>All Documentation Articles</h2>
+  <div class="righthand"><%= link_to("Create New Documentation", new_article_path) %></div>
+  <div class="lefthand"><%= link_to("Tile View", articles_path) %></div>
+  <br />
+    <% @articles.each do |article| %>
+      <div class="listbox"> 
+        <h4><%= link_to(article.title, {:action=>'show', :id=>article.id}, :class => 'action show')%></h4>
+          <p><%= article.timing %></p>
+          <p><%= article.team %></p>
+          <p>Tags: <%= article.tag_list %></p>
+      </div>
+    <% end %>
+</div>

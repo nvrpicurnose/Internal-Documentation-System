@@ -1,0 +1,19 @@
+
+
+<div style="text-align:center;">
+  <h2>Daily Tasks</h2>
+  <br />
+    <% @articles.each do |article| %>
+    <% if article.timing == 'Daily' %>
+      <div class='box'>
+        <h2><%= link_to(article.title, {:controller=>'articles', :action=>'show', :id=>article.id}, :class => 'action show')%></h2>
+        <p><%= article.timing %></p>
+        <p><%= article.team %></p>
+        <div id="indeximage">
+          <%= link_to image_tag(article.image(:medium)) %>
+        </div>
+        <p><br />Tags: <%= article.tag_list %></p>
+      </div>
+    <% end %>
+    <% end %>
+</div>

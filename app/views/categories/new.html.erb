@@ -1,0 +1,16 @@
+<% @page_title = "New Category" %>
+
+
+<%= render 'submenu_cat' %>
+
+<div class="Article new">
+	<div class="center">
+  		<h2>Create New Category</h2>
+  	</div>
+
+  <%= form_for(:category, :url => {:action => 'create'}) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <% end %>
+</div>

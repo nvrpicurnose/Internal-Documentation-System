@@ -1,0 +1,15 @@
+<% @page_title = "Update article" %>
+
+<%= render 'submenu_cat' %>
+
+<div class="articles edit">
+	<div class='center'>
+  		<h2>Edit Documentation</h2>
+	</div>
+
+  <%= form_for @article do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <% end %>
+</div>

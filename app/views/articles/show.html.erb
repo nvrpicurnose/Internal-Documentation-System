@@ -1,0 +1,98 @@
+<head>
+<%= stylesheet_link_tag 'articles' %>
+</head>
+
+<%= render 'submenu_cat' %>
+
+<div class='lefthand2'>
+  <p> parent of category >  <%= link_to @category, category_path(:id=>@category)%>  > <%= link_to @article.category_id, category_path(:id=>@article.category_id) %></p>
+</div>
+
+
+<br />
+<% @page_title = "Show Documentation" %>
+
+<div style="text-align:left;">
+  <div class="center">
+    <h2><%= @article.title %></h2>
+  </div>
+  <br />
+  <table summary="article detail view">
+    <table align="center">
+    <td width="150"></td>
+      <tr>
+        <th>Team</th>
+        <td><%= @article.team %></td>
+      </tr>
+      <tr>
+        <th>Timing</th>
+        <td><%= @article.timing %></td>
+      </tr>
+      <tr>
+        <th>Category</th>
+        <td><%= link_to @article.category_id, category_path(:id=>@article.category_id)%></td>
+      </tr>
+      <tr>
+        <th>Brief Overview</th>
+        <td><%= @article.overview %></td>
+      </tr>
+      <tr>
+        <th>Process</th>
+        <td><%= link_to "Documentation", @article.document.url(:original, false) %></td>
+      </tr>
+      <tr>
+        <th>Alternative</th>
+        <% if @article.misc.present? %>
+          <td><%= link_to "Shortcut", @article.shortcut.url(:original, false) %></td>
+        <%else%>
+          <td>None</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th>Templates</th>
+        <% if @article.misc.present? %>
+          <td><%= link_to "Templates", @article.template.url(:original, false) %></td>
+        <%else%>
+          <td>None</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th>Misc Storage</th>
+        <% if @article.misc.present? %>
+          <td><%= link_to "Misc Storage", @article.misc.url(:original, false) %></td>
+        <%else%>
+          <td>None</td>
+        <% end %>
+      </tr>
+      <tr>
+        <th>Reference</th>
+        <td><%= @article.reference %></td>
+      </tr>
+      <tr>
+        <th>Tags</th>
+        <td><%= raw @article.tag_list.map {|t| link_to t, tag_path(t)}.join(', ')%></td>
+      </tr>
+      <br />
+      <br />
+      <td class="actions">
+          <%= link_to("Edit", {:action => 'edit', :id => @article.id}, :class => 'action edit') %>
+          <%= link_to("Delete", {:action => 'delete', :id => @article.id}, :class => 'action delete')%>
+      </td>
+    </table>
+  </table>
+
+<div class="center">
+  <br />
+  <% if @article.image.present? %>
+    <%= image_tag @article.image.url(:medium)%>
+  <% else %>
+    <br /><br /><p>No Image (Please attached screenshot)</p>
+  <% end %>
+</div>
+<br />
+<br />
+<br />
+<div class="commento">
+  <%= render "comments/commenta" %>
+  <%= render "comments/forma" %>
+</div>

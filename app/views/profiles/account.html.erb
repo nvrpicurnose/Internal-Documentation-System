@@ -1,0 +1,13 @@
+<h1>User Profile</h1>
+<p><%= current_user.email %></p>
+<p><%= link_to "Edit Account", edit_user_registration_path %></p>
+<br />
+
+<div>
+	<h3>Your Comments</h3>
+	<% @comments.each do |comment| %>
+		<% comment.title %>
+		<% comment.content %>
+	<% end %>
+</div>
+

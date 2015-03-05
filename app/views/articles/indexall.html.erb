@@ -1,0 +1,32 @@
+
+<% @page_title = "articles" %>
+
+<%= paginate @articles %>
+
+<div class="center">
+  <h2>Documentation Articles</h2>
+  <div class="righthand"><%= link_to("Create New Documentation", new_article_path) %></div>
+  <div class="lefthand"><%= link_to("List View", listindex_path) %></div>
+  <br />
+    <% @articles.each do |article| %>
+      <div class="box"> 
+        <h2><%= link_to(article.title, {:action=>'show', :id=>article.id}, :class => 'action show')%></h2>
+        <div style="inline">
+          <p><%= article.timing %></p>
+          <p><%= article.team %></p>
+        </div>
+        <div id="indeximage">
+          <% if article.image.present? %>
+            <%= link_to image_tag(article.image(:medium), {:action=>'show', :id=>article.id}) %>
+          <% else %>
+            <br /><br /><br /><p>No Image (Please attached screenshot)</p><br /><br />
+          <% end %>
+        </div>
+        <p><br />Tags: <%= article.tag_list %></p>
+      </div>
+    <% end %>
+</div>
+<br />
+<br />
+<br />
+<div class='righthanddelete2'><%= paginate @articles %></div>

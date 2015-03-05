@@ -1,0 +1,71 @@
+<% if @article.errors.any? %>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
+
+<form class="form-horizontal">
+<div class="form-box">
+    <legend>Documentation Form</legend>
+    <div class="form-group">
+      <%= f.label(:title, "Title *") %><br />
+      <%= f.text_field(:title, :placeholder=>"eg. BN Daily Queries", :class=>"formbox")%>
+    </div>
+    <div class="form-group">
+      <%= f.label(:team, "Team") %><br />
+      <%= f.text_field(:team, :placeholder=>"eg. Banking IFS Support", :class=>"formbox")%>
+    </div>
+    <div class="form-group">
+      <%= f.label(:timing, "Timing *") %><br />
+      <%= f.select(:timing, ['Daily', 'Weekly', 'BiWeekly', 'Monthly', 'Quarterly', 'Annually', 'On Request', 'Ad-hoc'])%>
+    </div>
+    <div class="form-group">
+      <%= f.label(:category_id, "Category") %><br />
+      <%= f.collection_select(:category_id, Category.order(:title), :id, :title)%>
+    </div>
+    <div class="form-group">
+      <%= f.label(:overview, "Brief Overview *") %><br />
+      <%= f.text_area(:overview, :placeholder=>"eg. BN Daily Queries", :class=>"textbox")%>
+      <span class="help-block">Provide a quick high level overview of what this documentation is for. If possible, include brief steps.</span>
+    </div>
+    <div class="form-group">
+      <%= f.label(:reference, "Reference *") %><br />
+      <%= f.text_field(:reference, :placeholder=>"eg. Carita Liu", :class=>"formbox")%>
+    </div>
+</div>
+<div class="form-box">
+  <h4>File Uploading: For multiple files, please upload a .zip file</h4>
+    <div class="form-group">
+      <%= f.label(:document, "Official Documentation *") %>
+      <%= f.file_field :document %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:shortcut, "unOfficial Shortcuts") %>
+      <%= f.file_field :shortcut %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:template, "Template") %>
+      <%= f.file_field :template %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:misc, "Misc Storage") %>
+      <%= f.file_field :misc %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:image, "Screenshot") %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="form-group">
+      <%= f.label(:tag_list, "Tags* (seperated by commas)") %><br />
+      <%= f.text_field(:tag_list, :placeholder=>"eg. Baycom6, IFS Support", value: @article.tag_list.join(","), :class=>"formbox")%>
+    </div>
+</div>
+<div class="form-box">
+  <%= submit_tag("Update Documentation") %>
+  <div class=asterick><p>* mandatory field</p></div>
+</div>
+</form>

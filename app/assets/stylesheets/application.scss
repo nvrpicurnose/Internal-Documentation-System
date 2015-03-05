@@ -1,0 +1,268 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *
+ */
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#articles_index {
+	text-align: center;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+.style_image {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.box {
+	background-color: #FFFFF5;
+	width: 30%;
+	height: 450px;
+	margin: 1.5%;
+	padding: 10px;
+	border: 5px solid black;
+	float: left;
+}
+
+.form-group {
+	width: 440px;
+}
+
+.textbox {
+	width: 450px;
+	height: 120px;
+}
+
+.formbox {
+	width: 450px;
+}
+
+.form-horizontal {
+	align: center;
+	padding: 15px;
+}
+
+.form-box {
+	width: 500px;
+	margin: 20px auto;
+	padding: 10px;
+	border: 2px solid black;
+	float: center;
+}
+
+.form-buttons {
+	align: center;
+	margin: 0 auto;
+	float: center;
+}
+
+.bigolbutton {
+	float: left;
+	background: #fff7ef;
+	height: 300px;
+	width: 21%;
+	padding: 20px;
+	margin: 2%;
+	font-size: 150%;
+}
+
+.cgilogo {
+	float: left;
+	height: auto;
+	width: auto;
+	position: relative;
+	left: 590px;
+	bottom: 350px;
+}
+
+.listbox {
+	background-color: #FFFFF5;
+	height: 160px;
+	margin: 1.5%;
+	padding: 10px;
+	border: 5px solid black;
+	float: center;
+	text-align: left;
+}
+
+.righthand {
+	float: right;
+	text-align: right;
+	margin-right: 3%;
+}
+
+.lefthand {
+	float: left;
+	text-align: left;
+	margin-left: 2%;
+}
+
+.asterick {
+	float: right;
+	text-align: right;
+	margin-right: 5%;
+}
+
+.righthanddelete {
+	float:right;
+	text-align: right;
+	margin-right: 5%;
+	margin-top: 35%;
+}
+
+.centralize {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.listbox2 {
+	background-color: #FFFFF5;
+	height: 80px;
+	margin: 1.5%;
+	padding: 10px;
+	border: 5px solid black;
+	float: left;
+	text-align: left;
+	width: 20%;
+}
+
+.subcats {
+	text-align: center;
+	margin-left: 13%;
+}
+
+#submenu {
+margin-top: 0%;
+> ul {
+float: left;
+margin-top: -2%;
+background-color: black;
+margin-left: -2.5%;
+list-style: none;
+width: 15%;
+height: 800px;
+li {
+margin: 8px 0;
+}
+ul {
+font-size: 11px;
+margin: 0;
+padding-left: 16px;
+li {
+margin: 5px 0;
+}
+}
+}
+}
+
+.box3 {
+	background-color: #FFFFF5;
+	width: 31%;
+	height: 400px;
+	margin: 1%;
+	padding: 5px;
+	border: 5px solid black;
+	float: left;
+}
+
+.bigolbutton2 {
+	float: left;
+	background: #fff7ef;
+	height: 200px;
+	width: 17%;
+	padding: 20px;
+	margin: 2%;
+	font-size: 150%;
+}
+
+#submenu2 {
+margin-top: -4.7%;
+> ul {
+float: left;
+margin-top: -2%;
+background-color: black;
+margin-left: -2.5%;
+list-style: none;
+width: 15%;
+height: 800px;
+li {
+margin: 8px 0;
+}
+ul {
+font-size: 11px;
+margin: 0;
+padding-left: 16px;
+li {
+margin: 5px 0;
+}
+}
+}
+}
+
+.space {
+	margin-right: -10%;
+}
+
+.lefthand2 {
+	float: left;
+	text-align: left;
+	margin-left: 2%;
+	margin-top: -5%;
+}
+
+.righthanddelete2 {
+	float:right;
+	text-align: right;
+	margin-right: 5%;
+	margin-bottom: 10%;
+}
+
+.login {
+	float:center;
+	text-align: left;
+	margin-left: 40%;
+}
+
+.commente {
+	width: 260px;
+	max-height: 150px;
+	background-color: burlywood;
+	margin: 5px;
+	padding: 2px;
+}
+
+.commento {
+	margin: 10px;
+	float:left;
+	background-color: bisque;
+	padding: 2px;
+	width: 275px;
+}

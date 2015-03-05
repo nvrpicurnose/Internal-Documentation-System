@@ -1,0 +1,16 @@
+Remember to:
+1. Start up the sunspot javascript runtime environment with $rake sunspot:solr:start
+2. 
+
+Things To Implement:
+1. Users
+2. Commenting
+3. Favorites
+4. Calender
+5. 
+
+Things To Fix:
+1. breadcrumbs show ancestry
+2. articles show > category should show title not number
+3. tags pagination (currently only pagination without tags)
+4. Comments should show for its article

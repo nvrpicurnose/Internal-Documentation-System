@@ -1,0 +1,14 @@
+<h1>Tasks by Categories</h1>
+
+
+<%= render 'submenu_cat' %>
+
+<div class='righthand'><%= link_to("Add Category", new_category_path) %></div><br />
+
+<div class='spacer'>
+    <% @categories.each do |category| %>
+    	<% unless category.parent.present? %>
+        	<%= button_to(category.title, {:action=>'show', :id=>category.id}, :class => 'bigolbutton2')%>
+        <% end %>
+    <% end %>
+</div>

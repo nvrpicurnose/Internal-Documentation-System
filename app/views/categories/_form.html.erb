@@ -1,0 +1,31 @@
+<% if @category.errors.any? %>
+  <ul>
+    <% @category.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
+
+<form class="form-horizontal">
+<div class="form-box">
+    <legend>New Category Form</legend>
+    <div class="form-group">
+      <%= f.label(:title, "Title") %><br />
+      <%= f.text_field(:title, :placeholder=>"eg. Audit", :class=>"formbox")%>
+    </div>
+    <div class="form-group">
+      <%= f.label(:description, "Description") %><br />
+      <%= f.text_area(:description, :class=>"textbox")%>
+      <span class="help-block">What does this category cover? Related tasks will be associated with this category.</span>
+    </div>
+    <div class="form-group">
+      <%= f.label(:parent_id, "Sub-Category of") %><br />
+      <%= f.collection_select(:parent_id, Category.order(:title), :id, :title, include_blank: true )%>
+    </div>
+</div>
+<div class="form-box">
+  <%= submit_tag("Create") %>
+</div>
+</form>

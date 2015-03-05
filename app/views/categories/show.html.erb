@@ -1,0 +1,62 @@
+
+<%= render 'submenu_cat' %>
+
+<div class='center'><h2><%= @category.title %></h1></div><br />
+
+  <div class="righthand">
+    <%= link_to("New Documentation", new_article_path) %><br /><%= link_to("New Sub-Category", new_category_path) %>
+  </div>
+
+<div class="subcats">
+  <h2>Sub-Categories</h2>
+  <% @category.children.each do |category| %>
+      <div class="listbox2">
+        <h2><%= link_to(category.title, category_path(:id=>category.id)) %></h2>
+      </div>
+  <% end %>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="subcats">
+  <br />
+    <h2><%= @category.title%> Related Tasks </h2>
+    <% @articles.each do |article| %>
+    <% if article.category_id == @category.id %>
+      <div class="box3"> 
+        <h2><%= link_to(article.title, {:controller=>'articles', :action=>'show', :id=>article.id}, :class => 'action show')%></h2>
+        <div style="inline">
+          <p><%= article.timing %></p>
+          <p><%= article.team %></p>
+        </div>
+        <div id="indeximage">
+          <% if article.image.present? %>
+            <%= link_to image_tag(article.image(:medium), {:action=>'show', :id=>article.id}) %>
+          <% else %>
+            <br /><br /><br /><p>No Image (Please attached screenshot)</p><br /><br />
+          <% end %>
+        </div>
+        <p><br />Tags: <%= article.tag_list %></p>
+      </div>
+    <% end %>
+    <% end %>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div class='righthanddelete'>
+	<%= link_to("Edit This Category", {:action => 'edit', :id => @category.id}, :class => 'action edit') %><br />
+	<%= link_to("Delete This Category", {:controller=>'categories', :action=>'delete', :id=>@category.id}) %>
+</div>
+<br />
+<br />
+<br />
+<div class="commento">
+  <%= render "comments/commentc" %>
+  <%= render "comments/formc" %>
+</div>
